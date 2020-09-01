@@ -66,14 +66,14 @@ public class AuthenticationScheme extends HttpAuthenticationSchemeAdapter {
     @Override
     public HttpAuthenticationResult processAuthenticationRequest(@NotNull HttpServletRequest request, @NotNull HttpServletResponse response, @NotNull Map<String, String> schemeProperties) throws IOException {
 
-        String username = request.getHeader("X-Forwarded-Login");
+        String username = request.getHeader("X-Auth-Email");
 
         if(username == null){
             return HttpAuthenticationResult.notApplicable();
         }
 
-        String name = request.getHeader("X-Forwarded-Name");
-        String emailAddress = request.getHeader("X-Forwarded-Email");
+        String name = request.getHeader("X-Auth-Username");
+        String emailAddress = request.getHeader("X-Auth-Email");
 
         final SUser user = findOrCreateUser(username);
 

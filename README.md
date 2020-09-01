@@ -2,6 +2,10 @@
 
 HTTP Headers authentication plugin.
 
+Branches:
+
+* `headers-keycloak-gatekeeper` changed headernames to be compatible with keycloak gatekeeper [https://hub.docker.com/r/keycloak/keycloak-gatekeeper/dockerfile] (based on [https://github.com/louketo/louketo-proxy])
+
 ## Summary
 Will allow authenticated access to Teamcity to http requests with the following (hardcoded) headers:
 * `X-Forwarded-Login` (the username of the user)
@@ -21,6 +25,9 @@ Nope
 ## Development
 
 Plugin can be build by `gradle serverPlugin`. The plugin zip file will be available in `build/distributions`
+
+    docker build -f build.Dockerfile -t buildtcheader .
+    docker run --rm -v `pwd`/build:/home/gradle/src/build -it buildtcheader gradle build
 
 ## Release a new version
 
