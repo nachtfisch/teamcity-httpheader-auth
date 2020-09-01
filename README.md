@@ -8,9 +8,8 @@ Branches:
 
 ## Summary
 Will allow authenticated access to Teamcity to http requests with the following (hardcoded) headers:
-* `X-Forwarded-Login` (the username of the user)
-* `X-Forwarded-Name` (The name of the user)
-* `X-Forwarded-Email` (The email address of the user)
+* `X-Auth-Email` (the username of the user and the email address)
+* `X-Auth-Username` (The name of the user)
 
 This might be useful when Teamcity instances are hosted behind a reverse-proxy which is responsible for authentication.
 

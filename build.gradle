@@ -22,7 +22,7 @@ scmVersion {
     localOnly = true
 }
 
-version = scmVersion.version
+version = '1.0.0-gatekeeper'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -42,7 +42,7 @@ teamcity {
             name = project.name
             displayName = project.name
             version = project.version
-            vendorName = 'redgate'
+            vendorName = 'Innoveo'
             description = 'Http Headers authentication plugin'
             downloadUrl = 'https://github.com/red-gate/teamcity-httpheader-auth/'
             vendorUrl = 'https://github.com/red-gate/teamcity-httpheader-auth/'
